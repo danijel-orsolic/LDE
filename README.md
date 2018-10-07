@@ -39,3 +39,7 @@ The LEMP stack set up is adapted from [Frekans7 Docker Compose LEMP stack](https
 If you have problems with disksize remove or comment out the `config.disksize.size = '20GB'` line from VagrantFile and rerun vagrant up.
 
 This is more of a personal project without guarantees, but if you find it useful go for it! 
+
+## TODO
+
+* Adapt the readme - this is now meant to support an option of deploying as a local dev environment in Ubuntu without a VM
