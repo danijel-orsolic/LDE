@@ -9,7 +9,7 @@ sudo usermod -aG docker $USER
 
 sudo docker network rm nginx-proxy
 
-sudo apt remove docker.io -y
+sudo apt remove docker -y
 sudo apt remove docker-compose -y
 sudo apt remove npm -y
 
