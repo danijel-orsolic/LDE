@@ -1,4 +1,4 @@
 *.log
 .vagrant/*
-./used_ports
+used_ports
 

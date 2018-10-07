@@ -8,7 +8,7 @@ sudo apt update
 sudo apt upgrade
 modprobe aufs
 sudo snap install docker
-sudo apt install docker-compose htop npm -y
+sudo apt install docker-compose htop npm composer php-xml -y
 
 #add current user to docker group
 #sudo usermod -aG docker $USER # Disabling this because docker group has similar privileges as root. We can use sudo.
