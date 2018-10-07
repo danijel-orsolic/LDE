@@ -1,0 +1,5 @@
+TODO:
+
+* Check everything before first run, maybe even spin up a local ubuntu server VM for testing before deploying the LDE set up on the localhost
+* Perhaps make prep.sh copy the scripts contents to ~/LDE/ and change its add.sh there, running from there then, leaving downloaded LDE add.sh intact OR create a reset.sh that undoes everything from github..
+* Make a separate github repo for this

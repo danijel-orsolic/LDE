@@ -1,0 +1,47 @@
+version: '2'
+
+services:
+    namegoeshere:
+        image: nginx:stable-alpine
+        container_name: namegoeshere
+        expose:
+            - 80
+        volumes:
+            - ./app:/app
+            - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+        depends_on:
+            - namegoeshere-php
+        environment:
+            VIRTUAL_HOST: domaingoeshere
+            LETSENCRYPT_HOST: domaingoeshere
+            LETSENCRYPT_EMAIL: emailgoeshere
+
+    namegoeshere-db:
+        image: mariadb:5.7
+        container_name: namegoeshere-db
+        volumes:
+            - ./db:/var/lib/mysql:rw
+        expose:
+            - 3306
+        depends_on:
+            - namegoeshere
+        environment:
+            MYSQL_ROOT_PASSWORD: dbrootpass
+            MYSQL_DATABASE: namegoeshere
+            MYSQL_USER: usergoeshere
+            MYSQL_PASSWORD: passgoeshere
+
+    namegoeshere-php:
+        build:
+          context: ./
+          dockerfile: Dockerfile
+        container_name: namegoeshere-php
+        expose:
+            - 9000
+        volumes:
+            - ./app:/app
+
+networks:
+  default:
+    external:
+      name: nginx-proxy

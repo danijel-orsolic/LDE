@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  adminer:
+    image: dockette/adminer:dg
+    restart: always
+    expose:
+      - 80
+    environment:
+      VIRTUAL_HOST: adminer.local
+    container_name: adminer
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
