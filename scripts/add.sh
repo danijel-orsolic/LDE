@@ -169,6 +169,10 @@ fi # Ends the confirmation loop for domain, user, and email
 
 if [[ "$stack" != symfony ]]; then
 
+localip=$(hostname -i)
+
+sudo -- sh -c "echo \"$localip $domain\" >> /etc/hosts"
+
 echo -e "${cyan}Domain: $domain ${NC}"
 echo -e "${cyan}Username: $user ${NC}"
 echo -e "${cyan}Password: $pass ${NC}"
