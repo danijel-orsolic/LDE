@@ -19,8 +19,8 @@ sudo usermod -aG sudo $USER
 sudo docker network create nginx-proxy
 mkdir -p /home/$USER/Dev/projects
 
-cd $PWD/nginx-proxy && sudo docker-compose up -d && cd ..
-cd $PWD/adminer && sudo docker-compose up -d && cd ..
-cd $PWD/portainer && sudo docker-compose up -d && cd ..
+cd $PWD/scripts/nginx-proxy && sudo docker-compose up -d && cd ..
+cd $PWD/scripts/adminer && sudo docker-compose up -d && cd ..
+cd $PWD/scripts/portainer && sudo docker-compose up -d && cd ..
 
 touch used_ports
